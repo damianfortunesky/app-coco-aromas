@@ -1,17 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductList from "./pages/ProductList";
-import ProductDetails from "./pages/ProductDetails";
-import NavBar from './components/NavBar'
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<ProductList />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
-      </Routes>
-    </Router>
+    <div className="flex flex-col min-h-screen">
+      <Router>
+        {/* Navbar */}
+        <NavBar />
+
+        {/* Main Content */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<ProductList />} />
+          </Routes>
+        </main>
+
+        {/* Footer */}
+        <Footer />
+      </Router>
+    </div>
   );
 };
 
