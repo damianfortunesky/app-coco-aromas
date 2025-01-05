@@ -84,3 +84,58 @@ Configuración del Proyecto: Vite + React + TypeScript + TailwindCSS
     npm install axios
 
 
+/* ---------------------------------------------------------------------- BACKEND-APP -------------------------------------------------------------------------- */
+
+# 1. Crear directorio:
+
+  app-coco-aromas> mkdir backend
+  app-coco-aromas> cd backend
+
+# 2. Preparar Entorno Virtual:
+
+    -- Crear Entorno
+        app-coco-aromas\backend> python -m venv .venv
+
+    -- Activar Entorno
+        app-coco-aromas\backend> .\.venv\Scripts\activate
+    
+    -- Si no funciona
+        app-coco-aromas\backend> Set-ExecutionPolicy RemoteSigned
+        app-coco-aromas\backend> .\.venv\Scripts\activate
+
+        -- Git Bash
+            source .venv/Scripts/activate
+
+
+
+# 3. Instalar dependecias:
+
+    PATH = app-coco-aromas\backend> 
+    
+    Principales
+    
+        PATH>    pip install -r requirements.txt
+        PATH>    python.exe -m pip install --upgrade pip
+
+    Adicionales que surgieron
+    
+        PATH>    pip install --upgrade python-dotenv
+        PATH>    pip install pydantic[email]
+        PATH>    pip install --upgrade passlib bcrypt
+
+    Actualizar 
+        
+        pip freeze > requirements.txt
+
+    Guardar automaticamente al instalar
+
+        pip install nombre_del_paquete --save 
+
+
+# 4. Ejecucion y gestion
+
+    -- Ejecutar
+    app-coco-aromas\backend>  uvicorn app.main:app --reload
+
+
+    
