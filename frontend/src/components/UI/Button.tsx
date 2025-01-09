@@ -1,31 +1,18 @@
-import { useState } from "react";
+  import React from 'react';
 
-interface ButtonProps {
-    label: string;
-    onClick?: () => void; 
+  interface ButtonProps {
+    text: string;
+    onClick?: () => void;
+    className?: string;
   }
   
-  const Button: React.FC<ButtonProps> = ({ label, onClick}) => {
-    
-    const style ="font-semibold text-xs py-3 px-3 rounded-full bg-rosa text-blanco hover:bg-rosa_oscuro";
-    
-    const [isClicked, setIsClicked] = useState(false);
-
-    const hanldeClick = () => {
-        setIsClicked(true); // Activa la animación
-
-        if (onClick) onClick();
-        
-        // Restablece el estado
-        setTimeout(() => {
-            setIsClicked(false);
-        }, 150); // milisegundos
-    };
-
+  const Button: React.FC<ButtonProps> = ({ text, onClick, className }) => {
     return (
-      <button className={`${style} ${ isClicked ? "scale-105" : "scale-100" } bg-rosa text-blanco hover:bg-rosa_oscuro`} 
-        onClick={hanldeClick}>
-        {label}
+      <button
+        onClick={onClick}
+        className={`px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition duration-300 ${className}`}
+      >
+        {text}
       </button>
     );
   };

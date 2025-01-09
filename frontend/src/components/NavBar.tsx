@@ -1,30 +1,37 @@
 import React from "react";
-import Logo from '../assets/logo.png';
-import Button from "./UI/Button";
-import ElementList from "./UI/ElementList";
+import { Link } from "react-router-dom";
+import NavLink from "./UI/NavLink";
 
-const Navbar: React.FC = () => {
+const NavBar: React.FC = () => {
   return (
-    <nav className="bg-light text-dark py-4 px-6 flex justify-between items-center shadow-md"> 
-      
-      <div className="text-2xl font-bold text-primary">
-        <img src={Logo} alt="Logo" className="w-10 h-10 object-contain" />
-      </div>
+    <header className="bg-orange-500 text-white">
 
-      {/* Links */}
-      <ul className="flex space-x-8 font-sans font-medium text-sm">
-          <ElementList label="Home"/>
-          <ElementList label="Productos"/>
-          <ElementList label="Contacto"/>
-      </ul>
+      {/* Navegación Principal */}
+      <nav className="container flex flex-row flex-wrap justify-between items-center px-4 py-4">
 
-      {/* Cuenta */}
-      <div className="space-x-2">
-        <Button label="Crear Cuenta"/>
-        <Button label="Iniciar Sesión"/>
-      </div>
-    </nav>
+        {/* Logo */}
+        <div className="flex items-center">
+          <Link to="/" className="text-xl font-bold hover:underline">
+            COCO AROMAS
+          </Link>
+        </div>
+
+        {/* Links */}
+        <ul className="flex space-x-8">
+          <li>
+            <NavLink text="Contactanos" href="/contacto" />
+          </li>
+          <li>
+            <NavLink text="Iniciar sesión" href="/login" />
+          </li>
+          <li>
+            <NavLink text="Crear cuenta" href="/signin" />
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 };
 
-export default Navbar;
+export default NavBar;
+

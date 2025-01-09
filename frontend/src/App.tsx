@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProductList from "./pages/ProductList";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import HomePage from "./pages/HomePage";
 
 const App: React.FC = () => {
   return (
@@ -13,7 +13,10 @@ const App: React.FC = () => {
         {/* Main Content */}
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<ProductList />} />
+            {/* Ruta para la página principal */}
+            <Route path="/" element={<HomePage />} />
+
+            {/* Puedes agregar más rutas aquí */}
           </Routes>
         </main>
 
@@ -25,3 +28,5 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+

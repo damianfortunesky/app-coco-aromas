@@ -1,40 +1,48 @@
-import React from 'react';
-import ElementList from './UI/ElementList';
+import React from "react";
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-blanco text-negro py-8 shadow-md">
-      
-      <div className="container mx-auto grid grid-cols-3 text-center text-sm font-sans">
-        <div>
-          <h4 className="text-negro font-bold">COCO AROMAS</h4>
+    <footer className="bg-gray-100 text-gray-800 py-6">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+        {/* Contacto */}
+        <div className="text-center md:text-left mb-4 md:mb-0">
+          <h3 className="text-lg font-bold">Contacto</h3>
+          <p className="mt-2">cocoaromas@gmail.com</p>
+          <p>+54 11 2400 8735</p>
         </div>
 
-        <div>
-          <h4 className="text-negro font-bold mb-3">ENLACES</h4>
-        
-          <ul className="space-y-1">
-            <ElementList label='Políticas de Privacidad'/>
-            <ElementList label='Términos y Condiciones'/>
-          </ul>
+        {/* Redes Sociales */}
+        <div className="flex space-x-6">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-800 hover:text-orange-500"
+          >
+            <FaFacebookF size={24} />
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-800 hover:text-orange-500"
+          >
+            <FaInstagram size={24} />
+          </a>
+          <a
+            href="https://www.tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-800 hover:text-orange-500"
+          >
+            <FaTiktok size={24} />
+          </a>
         </div>
-
-        <div>
-          <h4 className="text-negro font-bold mb-3">REDES SOCIALES</h4>
-          <ul className="space-y-1">
-            <ElementList label='TikTok'/>
-            <ElementList label='Facebook'/>
-            <ElementList label='Instagram'/>
-          </ul>
-        </div>
-
       </div>
-
-      <p className="text-center mt-4 text-sm text-gris">
-        © 2025 COCO AROMAS. Todos los derechos reservados.
-      </p>
     </footer>
   );
 };
 
 export default Footer;
+

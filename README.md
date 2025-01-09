@@ -83,6 +83,9 @@ Configuración del Proyecto: Vite + React + TypeScript + TailwindCSS
 
     npm install axios
 
+# 9. Instalar libreria de Iconos
+
+    npm install react-icons
 
 /* ---------------------------------------------------------------------- BACKEND-APP -------------------------------------------------------------------------- */
 
