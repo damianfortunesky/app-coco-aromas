@@ -1,32 +1,55 @@
+// src/App.tsx
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
+
+// Páginas
 import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import OrderStatusPage from "./pages/OrderStatusPage";
+
+// Contextos
+import { AuthProvider } from "./context/AuthContext";
+import { CartProvider } from "./context/CartContext";
+
+// Componentes UI Reutilizables
+import Header from "./components/UI/Header";
+import Footer from "./components/UI/Footer";
 
 const App: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Router>
-        {/* Navbar */}
-        <NavBar />
+    <AuthProvider>
+      <CartProvider>
+        <Router>
+          <div className="flex flex-col min-h-screen">
+            {/* Header */}
+            <Header />
 
-        {/* Main Content */}
-        <main className="flex-grow">
-          <Routes>
-            {/* Ruta para la página principal */}
-            <Route path="/" element={<HomePage />} />
+            {/* Rutas principales */}
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/order/:id" element={<OrderStatusPage />} />
+              </Routes>
+            </main>
 
-            {/* Puedes agregar más rutas aquí */}
-          </Routes>
-        </main>
-
-        {/* Footer */}
-        <Footer />
-      </Router>
-    </div>
+            {/* Footer */}
+            <Footer />
+          </div>
+        </Router>
+      </CartProvider>
+    </AuthProvider>
   );
 };
 
 export default App;
+
+
 
 

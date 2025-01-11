@@ -1,21 +1,20 @@
-  import React from 'react';
+import React from "react";
 
-  interface ButtonProps {
-    text: string;
-    onClick?: () => void;
-    className?: string;
-  }
-  
-  const Button: React.FC<ButtonProps> = ({ text, onClick, className }) => {
-    return (
-      <button
-        onClick={onClick}
-        className={`px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition duration-300 ${className}`}
-      >
-        {text}
-      </button>
-    );
-  };
-  
-  export default Button;
-  
+interface ButtonProps {
+  children: React.ReactNode;
+  onClick: () => void;
+  className?: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ children, onClick, className }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`bg-pink-600 text-white py-2 px-4 rounded-md hover:bg-pink-700 focus:ring-2 focus:ring-pink-400 focus:outline-none ${className}`}
+    >
+      {children}
+    </button>
+  );
+};
+
+export default Button;

@@ -66,26 +66,71 @@ Configuración del Proyecto: Vite + React + TypeScript + TailwindCSS
 # 5. Importar el index.css en main.tsx
 
     import './index.css'; 
-    
-# 6. Ejecutar el servidor de desarrollo
 
-    npm run dev
 
-# 7. Instalar react-router-dom
+# 6. Instalar react-router-dom
 
     npm install react-router-dom
 
-# 8. Instalar los tipos para TypeScript
 
+    # Instalar los tipos para TypeScript
+    
     npm install --save-dev @types/react-router-dom
 
-# 8. Instala Axios para manejar las solicitudes al backend:
+# 7. Instala Axios para manejar las solicitudes al backend:
 
     npm install axios
 
-# 9. Instalar libreria de Iconos
+# 8. Instalar libreria de Iconos
 
-    npm install react-icons
+    $ npm install @heroicons/react@v1
+
+# 9. Instalar librería de clases dinámicas 
+
+    npm install clsx
+
+# 10. Configurar los scripts en package.json
+
+    "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+    }
+
+# 11. Ejecutar el servidor de desarrollo
+
+    npm run dev
+
+# 12. Manejo de fechas
+    
+    npm install date-fns
+
+    # Tipado para date-fns
+    npm install --save-dev @types/date-fns
+
+# 12. Observaciones
+
+    Dependencias de producción:
+    
+        react: Biblioteca principal.
+        react-dom: Renderiza React en el navegador.
+        react-router-dom: Manejo de rutas.
+        axios: Peticiones HTTP al backend.
+        @heroicons/react: Íconos SVG compatibles con TailwindCSS.
+        clsx: Manejo de clases dinámicas.
+        date-fns: Manejo de fechas.
+    
+    Dependencias de desarrollo:
+     
+        typescript: Tipado estático.
+        @types/react, @types/react-dom, @types/react-router-dom: Tipos para TypeScript.
+        tailwindcss, postcss, autoprefixer: Configuración de TailwindCSS.
+
+    Instalacion de 1 sola vez:
+
+    npm install react react-dom react-router-dom axios @heroicons/react clsx date-fns && \
+    npm install -D typescript @types/react @types/react-dom @types/react-router-dom tailwindcss postcss autoprefixer
+
 
 /* ---------------------------------------------------------------------- BACKEND-APP -------------------------------------------------------------------------- */
 
